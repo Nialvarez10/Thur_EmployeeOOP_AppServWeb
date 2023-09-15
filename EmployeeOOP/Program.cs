@@ -27,8 +27,8 @@ try
     SalaryEmployee salaryEmployee = new SalaryEmployee()
     {
         Id = 123456,
-        FirstName = Console.ReadLine(),
-        LastName = Console.ReadLine(),
+        FirstName = firstName,
+        LastName = lastName,
         BirthDate = dateObject,
         HiringDate = dateObject,
         IsActive = true,
