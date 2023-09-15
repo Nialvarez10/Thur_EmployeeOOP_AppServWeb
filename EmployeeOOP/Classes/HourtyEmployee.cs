@@ -10,7 +10,7 @@ namespace EmployeeOOP.Classes
     {
         #region Properties
 
-        public decimal Hours { get; set; }
+        public float Hours { get; set; }
         public decimal HourValue { get; set; }
 
         #endregion
@@ -25,8 +25,7 @@ namespace EmployeeOOP.Classes
         public override decimal GetValueToPay()
         {
             // Calcular el salario basado en las horas trabajadas y el valor por hora
-            decimal salary = Hours * HourValue;
-            return salary;
+            return HourValue *(decimal)Hours;
         }
 
         public override string ToString()
@@ -34,7 +33,7 @@ namespace EmployeeOOP.Classes
             return $"{base.ToString()}" +
                    $"Horas Trabajadas: {Hours:F2}\n" +
                    $"Valor por Hora: {HourValue:C2}\n" +
-                   $"Salario Devengado: {GetValueToPay():C2}\n\t";
+                   $"Total valor: {GetValueToPay():C2}\n\t";
         }
 
         #endregion

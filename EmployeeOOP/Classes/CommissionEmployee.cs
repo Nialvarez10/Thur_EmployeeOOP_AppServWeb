@@ -23,8 +23,7 @@ namespace EmployeeOOP.Classes
         }
         public override decimal GetValueToPay()
         {
-            decimal salary = CommisionPercentaje / 100 * Sales;
-            return salary;
+            return Sales * (CommisionPercentaje / 100);
         }
 
         public override string ToString()
@@ -32,7 +31,7 @@ namespace EmployeeOOP.Classes
             return $"{base.ToString()}" +
                    $"Porcentaje de Comisión: {CommisionPercentaje}%\n" +
                    $"Ventas: {Sales:C2}\n" +
-                   $"Salario Total: {GetValueToPay():C2}\n\t";
+                   $"Total: {GetValueToPay():C2}\n\t";
         }
         #endregion
 

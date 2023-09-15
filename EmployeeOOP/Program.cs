@@ -5,9 +5,11 @@ internal class Program
     {
         try
         {
-            int day, month, year;
+            int day, month, year, id;
             string firstName, lastName;
-            decimal salary;
+            decimal salary,hourValue;
+            bool isActive;
+            float hours;
 
 
 
@@ -26,8 +28,15 @@ internal class Program
 
             //Inicialización clase Date
             Date dateObject = new Date(day, month, year);
-            Console.WriteLine("/n");
+            Console.WriteLine();
             Console.WriteLine(dateObject.ToString());
+
+            Console.WriteLine();
+
+            Console.WriteLine("---------------------------SALARIO----------------------------");
+
+            Console.Write("Ingresar su identificación: ");
+            id = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("Ingresar nombre completo: ");
             firstName = Console.ReadLine();
@@ -41,7 +50,7 @@ internal class Program
             //HardCoding= Quemar codigo
             SalaryEmployee salaryEmployee = new SalaryEmployee()
             {
-                Id = 123456,
+                Id = id,
                 FirstName = firstName,
                 LastName = lastName,
                 BirthDate = dateObject,
@@ -52,6 +61,56 @@ internal class Program
 
             Console.WriteLine(salaryEmployee);
 
+            Console.WriteLine("---------------------------PORCENTAJE VENTAS----------------------------");
+
+            Employee commissionEmployee = new CommissionEmployee()
+            {
+                Id = 30000,
+                FirstName = "Camila",
+                LastName = "Perez Zapata",
+                BirthDate = dateObject,
+                HiringDate = dateObject,
+                IsActive = false,
+                CommisionPercentaje = 7,
+                Sales = 3000000,
+            };
+
+            Console.WriteLine(commissionEmployee);
+
+            Console.WriteLine("---------------------------VALOR HORA----------------------------");
+
+            Console.Write("Ingresar su identificación: ");
+            id = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Ingresar nombre completo: ");
+            firstName = Console.ReadLine();
+
+            Console.Write("Ingresar apellidos completos: ");
+            lastName = Console.ReadLine();
+
+            Console.Write("Eres empleado activo (true/false): ");
+            isActive =Convert.ToBoolean(Console.ReadLine());
+
+            Console.Write("Ingresar horas: ");
+            hours = Convert.ToSingle(Console.ReadLine());
+
+            Console.Write("Ingresar valor x hora: ");
+            hourValue = Convert.ToDecimal(Console.ReadLine());
+
+            Employee hourtyEmployee = new HourtyEmployee()
+            {
+                Id = id,
+                FirstName = firstName,
+                LastName = lastName,
+                BirthDate = dateObject,
+                HiringDate = dateObject,
+                IsActive = isActive,
+                Hours = hours,
+                HourValue = hourValue,
+                
+            };
+
+            Console.WriteLine(hourtyEmployee);
 
         }
         catch (Exception ex)
