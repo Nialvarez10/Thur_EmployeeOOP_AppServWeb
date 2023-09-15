@@ -1,9 +1,13 @@
 ﻿using EmployeeOOP.Classes;
 try
 {
+    int day, month, year;
+    string firstName, LastName;
+   
+
     Console.WriteLine("OPP APPLICATION");
     Console.WriteLine("---------------");
-    int day, month, year;
+    
 
     Console.Write("Ingresar el dia: ");
     day = Convert.ToInt32(Console.ReadLine());
@@ -18,6 +22,30 @@ try
     Date dateObject = new Date(day, month, year);
     Console.WriteLine("/n");
     Console.WriteLine(dateObject.ToString());
+
+    //HardCoding= Quemar codigo
+    SalaryEmployee salaryEmployee = new SalaryEmployee()
+    {
+        Id = 123456,
+        FirstName = Console.ReadLine(),
+        LastName = Console.ReadLine(),
+        BirthDate = dateObject,
+        HiringDate = dateObject,
+        IsActive = true,
+        Salary = Decimal.Parse(Console.ReadLine()),
+    };
+
+
+    Console.Write("Ingresar nombre completo");
+    firstName= Console.ReadLine();
+
+    Console.Write("Ingresar apellidos completos");
+    LastName = Console.ReadLine();
+
+
+
+    Console.WriteLine(salaryEmployee);
+
 
 }
 catch (Exception ex)
