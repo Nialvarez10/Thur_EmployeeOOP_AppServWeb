@@ -49,7 +49,7 @@ namespace EmployeeOOP.Classes
             }
             else 
             {
-                throw new DayException(string.Format("El día {0} no es válido para el mes {1}."
+                throw new DayException(string.Format("El día {0} no es válido para el mes {1}."+
                     day,month));
                 
             }
